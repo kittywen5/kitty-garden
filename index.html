@@ -1,1 +1,74 @@
-Hello Kitty 游戏 HTML 会在此呈现
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>🎀 Hello Kitty 的魔法花园 🎀</title>
+  <style>
+    body {
+      background-color: #ffeeff;
+      font-family: "Comic Sans MS", cursive;
+      text-align: center;
+      padding: 40px;
+      color: #555;
+    }
+    h1 {
+      color: #ff3399;
+    }
+    button {
+      background-color: #ffccdd;
+      color: #3366cc;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+    }
+    button:hover {
+      background-color: #ff99bb;
+    }
+    #response {
+      margin-top: 30px;
+      font-weight: bold;
+    }
+    .kitty {
+      margin: 20px;
+    }
+    .kitty img {
+      width: 120px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px pink;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎀 Hello Kitty 的魔法花园 🎀</h1>
+  <div class="kitty">
+    <img src="kitty.png" alt="Kitty" />
+  </div>
+  <p>你好，我是Hello Kitty，欢迎来到我的花园！</p>
+  <button onclick="water()">浇水</button>
+  <button onclick="plant()">种花</button>
+  <button onclick="chat()">聊天</button>
+  <div id="response"></div>
+
+  <script>
+    function water() {
+      document.getElementById("response").innerText = "💧你给花儿浇了水，它们笑得更开心啦～";
+    }
+    function plant() {
+      document.getElementById("response").innerText = "🌸你种下了一颗魔法种子，期待它开花哦！";
+    }
+    function chat() {
+      const phrases = [
+        "喵～今天的阳光真好！",
+        "我最喜欢粉红色了！你也是吗？",
+        "一起喝下午茶吧！🎀",
+        "要不要帮我选蝴蝶结？🎀💗",
+        "和你在一起好开心～"
+      ];
+      const random = Math.floor(Math.random() * phrases.length);
+      document.getElementById("response").innerText = "😺 " + phrases[random];
+    }
+  </script>
+</body>
+</html>
